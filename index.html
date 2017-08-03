@@ -3,22 +3,9 @@
 
 <head>
   <title>Redux basic example</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-  <style media="screen">
-    body {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      max-width: 100%;
-      max-height: 100%;
-    }
-
-    .buttons {
-      display: flex;
-    }
-  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
+  <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
@@ -42,41 +29,7 @@
   </div>
   <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <script>
-    const counter = (state, action) => {
-      if (typeof state === 'undefined') return 0;
-
-      switch (action.type) {
-        case 'INCREMENT':
-          return state + 1;
-        case 'DECREMENT':
-          return state - 1;
-        default:
-          return state;
-      }
-    }
-
-    const store = Redux.createStore(counter);
-    const valueEl = document.getElementById('value');
-
-    const render = () => valueEl.innerHTML = store.getState().toString();
-
-    render();
-
-    store.subscribe(render);
-
-    document.getElementById('increment').addEventListener('click', () => {
-      store.dispatch({
-        type: 'INCREMENT',
-      });
-    });
-
-    document.getElementById('decrement').addEventListener('click', () => {
-      store.dispatch({
-        type: 'DECREMENT',
-      });
-    });
-  </script>
+  <script src="index.js"></script>
 </body>
 
 </html>
